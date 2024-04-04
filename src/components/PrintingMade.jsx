@@ -16,7 +16,7 @@ const PrintingMade = () => {
                     </div>
                 </div>
 
-                <div className="grid lg:grid-cols-3 gap-8 lg:gap-6 mt-8 lg:mt-0">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 lg:gap-6 mt-8 lg:mt-0">
                     <div className=" px-8 py-8 text-center border-2  border-gray-200 shadow-md rounded-3xl group">
                         <img src="images/easyprinting1.png" className="w-[45%] mx-auto mb-3 scale-105 group-hover:scale-90 transition duration-300" />
                         <h2 className="font-medium pb-3">Local fulfillment</h2>

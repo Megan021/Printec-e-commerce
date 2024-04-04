@@ -27,10 +27,10 @@ const OurTeam = () => {
     const product = [1, 1, 1, 1, 1];
 
     return (
-        <div>
+        <div className="">
             <div className="container text-center pb-20 pt-3">
                 <p className="uppercase text-xs font-medium text-[#7000FE]">our team</p>
-                <h2 className="text-4xl font-semibold tracking-tight py-5 pb-9">We are the best <span className="text-[#7000FE]">team!</span></h2>
+                <h2 className="text-4xl font-semibold tracking-tight py-5 pb-9 px-4 lg:px-0">We are the best <span className="text-[#7000FE]">team!</span></h2>
 
                 {/* <div className="grid grid-cols-4 gap-6">
                     <div>

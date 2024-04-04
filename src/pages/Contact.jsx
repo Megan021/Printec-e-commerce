@@ -87,7 +87,7 @@ const Contact = () => {
           // onSubmit={onSubmit}
           >
             {() => (
-              <Form className="grid lg:grid-cols-2 gap-6 lg:w-[70%] mx-auto ">
+              <Form className="grid lg:grid-cols-2 gap-4 md:gap-6  lg:w-[70%] mx-auto ">
                 <div className="col-span-2 lg:col-span-0">
                   <Field className='w-[100%] py-3 px-4 border shadow rounded-full' type="text" name="firstName" placeholder="First Name" />
                   <ErrorMessage className="text-red-600 px-4 pt-2" name="firstName" component="div" />
@@ -101,7 +101,7 @@ const Contact = () => {
                   <ErrorMessage className="text-red-600 px-4 pt-2" name="subject" component="div" />
                 </div>
                 <div className="col-span-2">
-                  <Field className='w-[100%] py-3 px-4 border shadow rounded-3xl'
+                  <Field className='w-[100%] py-3 px-4 border shadow rounded-3xl resize-none'
                     as="textarea"
                     name="message"
                     placeholder="Message"
