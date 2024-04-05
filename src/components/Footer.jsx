@@ -9,7 +9,7 @@ const Footer = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     };
   return (
-    <div className="bg-[#F4F6FA]">
+    <div className="bg-[#F4F6FA] border-t border-gray-200">
         <div className="container py-14 lg:py-20 px-4 lg:px-0 text-sm lg:flex md:grid grid-cols-3 justify-between border-b">
             <div className="lg:w-[20%] col-span-3">
                 <h2 className="font-bold text-xl pb-5">Printec</h2>
