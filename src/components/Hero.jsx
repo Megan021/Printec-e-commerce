@@ -51,7 +51,6 @@ const Hero = () => {
         swipeable={true}
         draggable={true}>
 
-
         <div>
           <div className="flex lg:h-[35rem]">
             <div className="flex-1 ">
