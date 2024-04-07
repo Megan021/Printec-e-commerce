@@ -7,13 +7,20 @@ import { BiMenuAltLeft } from "react-icons/bi";
 import { useState } from "react";
 import { CgClose } from "react-icons/cg";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion"
+
+const variants = {
+    open: { opacity: 1, x: 0 },
+    closed: { opacity: 0, x: "-100%" },
+}
 
 const Navbar = () => {
     const location = useLocation();
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
+    // const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const closeMenu = () => {
-        setIsMenuOpen(false);
+        setIsOpen(false);
     };
 
     const NavLink = ({ to, children }) => {
@@ -35,32 +42,35 @@ const Navbar = () => {
             <div className="flex justify-between items-center px-7 shadow h-[5.5rem] bg-white">
 
                 <div className="md:hidden text-2xl">
-                    <button onClick={() => setIsMenuOpen(prevState => !prevState)}><BiMenuAltLeft /></button>
-                    {isMenuOpen && (
-                            <div className="z-[999] sm:hidden duration-500 fixed top-0 left-0 h-screen w-[100%] bg-white shadow-lg">
-                                <div className='flex justify-between py-7 px-4 w-[100%] mx-auto shadow'>
-                                    <div className="w-[55%]">
-                                        <Link to='/' onClick={closeMenu}>
-                                            <h2 className="text-2xl font-bold">Printec</h2>
-                                        </Link>
-                                    </div>
-                                    <button onClick={closeMenu}><CgClose className="text-2xl" /></button>
-                                </div>
-                                <hr />
-                                <ul className="flex flex-col text-center px-5 leading-[3.3rem] pt-9 pb-3 text-base">
-                                    <NavLink to='/' onClick={closeMenu}>HOME</NavLink>
-                                    <NavLink to='/shop' onClick={closeMenu}>SHOP</NavLink>
-                                    <NavLink to='/about' onClick={closeMenu}>ABOUT</NavLink>
-                                    <NavLink to='/blog' onClick={closeMenu}>BLOG</NavLink>
-                                    <NavLink to='/contact' onClick={closeMenu}>CONTACT</NavLink>
-                                </ul>
+                    <button onClick={() => setIsOpen(isOpen => !isOpen)}><BiMenuAltLeft /></button>
+
+                    <motion.nav
+                        animate={isOpen ? "open" : "closed"}
+                        variants={variants}
+                        className="z-[999] md:hidden duration-500 fixed top-0 left-0 h-screen w-[100%] bg-white shadow-lg">
+                        <div className='flex justify-between py-7 px-4 w-[100%] mx-auto shadow'>
+                            <div className="w-[55%]">
+                                <Link to='/' onClick={closeMenu}>
+                                    <h2 className="text-2xl font-bold">Printec</h2>
+                                </Link>
                             </div>
-                    )}
+                            <button onClick={closeMenu}><CgClose className="text-2xl" /></button>
+                        </div>
+                        <hr />
+                        <ul className="flex flex-col text-center px-5 leading-[3.3rem] pt-9 pb-3 text-base">
+                            <NavLink to='/' onClick={closeMenu}>HOME</NavLink>
+                            <NavLink to='/shop' onClick={closeMenu}>SHOP</NavLink>
+                            <NavLink to='/about' onClick={closeMenu}>ABOUT</NavLink>
+                            <NavLink to='/blog' onClick={closeMenu}>BLOG</NavLink>
+                            <NavLink to='/contact' onClick={closeMenu}>CONTACT</NavLink>
+                        </ul>
+                    </motion.nav>
+
                 </div>
 
                 <div>
                     <Link to="/">
-                    <h2 className="text-2xl font-bold">Printec</h2>
+                        <h2 className="text-2xl font-bold">Printec</h2>
                     </Link>
                 </div>
 
